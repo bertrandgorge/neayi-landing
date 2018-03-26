@@ -2,6 +2,10 @@ body {
   @include body-font;
 }
 
+a {
+ color: $blue;
+}
+
 h1,
 h2,
 h3,
