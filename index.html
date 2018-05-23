@@ -55,17 +55,27 @@
         overflow: hidden;
     }
 
-    #main video {
-        height: 100%;
-        min-width: 100%;
+    .videocontainer {
+        position: absolute;
+        top: 0;    
+        left: 0;    
+        height: 100%;    
+        width: 100%;    
+        overflow: hidden;    
+    }
+    .videocontainer video {
         object-fit: cover;
         background-size: cover;
-        transition: 1s opacity;
         opacity: 0.5;
-        position: absolute;
         background: url(static/copenhagen-background.jpg) no-repeat;
-        top: 0;
-        left: 0;
+
+        width: auto;
+        position: relative;    
+        min-width: 100%;    
+        background-size: cover;    
+        left: 50%;    
+        top: 50%;
+        transform: translateX(-50%) translateY(-50%);
     }
 
 
@@ -95,18 +105,24 @@
 
     <!-- Masthead -->
     <header class="masthead text-white text-center" id="main">
-      <div class="overlay"></div>
-      <video class="video" autoplay loop>
-          <!-- <source src="static/copenhagen.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"' /> -->
-          <source src="static/copenhagen-background.mp4" type="video/mp4" />
-          <source src="static/copenhagen-background.webm" type='video/webm; codecs="vp8, vorbis"' />
-          <source src="static/copenhagen-background.ogv" type='video/ogg; codecs="theora, vorbis"' />
-          <img src="static/copenhagen-background.jpg">
-      </video>      
+      
+    
       <div class="container">
+        
+
+        <div class="videocontainer">
+          <video class="video" autoplay="" loop="">
+            <!-- <source src="static/copenhagen.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"' /> -->
+            <source src="static/copenhagen-background.mp4" type="video/mp4">
+            <source src="static/copenhagen-background.webm" type="video/webm; codecs=&quot;vp8, vorbis&quot;">
+            <source src="static/copenhagen-background.ogv" type="video/ogg; codecs=&quot;theora, vorbis&quot;">
+            <img src="static/copenhagen-background.jpg">
+          </video>
+        </div>
+        
         <div class="row">
           <div class="col-xl-9 mx-auto">
-            <h1 class="mb-5">Nous concevons des solutions pour changer le comportement des individus en faveur d'une société plus verte</h1>
+            <h1>Nous concevons des solutions pour changer le comportement des individus en faveur d'une société plus verte</h1>
           </div>
            <!-- <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
             <form>
@@ -121,6 +137,8 @@
             </form>
           </div>-->
         </div>
+
+
       </div>
     </header>
 
